@@ -18,6 +18,19 @@ body {
   width: 90vw;
 }
 
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 10px;
+  color: #666;
+  font-style: italic;
+}
+
 .editor,
 .previewer {
   border: solid 1px black;

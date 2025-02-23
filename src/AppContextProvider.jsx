@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const defaultMarkdown = [
-    "# Welcome to my React Markdown Previewer!",
+    "# Welcome to my React Markdown Previewer!!!",
     "## This is an H2 heading",
     "This is a link to [my other projects](https://jingli.work)",
     "This is a code block:",
@@ -22,9 +22,10 @@ export const AppContextProvider = ({ children }) => {
     "- Item B",
     "- Item C",
   ].join("\n");
+
   const [markdown, setMarkdown] = useState(
-    localStorage.getItem("markdown") || defaultMarkdown
-  );
+    () => localStorage.getItem("markdown") || defaultMarkdown
+  ); //Verwende eine Lazy Initialization mit einer Funktion,dadurch wird localStorage.getItem("markdown") nur beim ersten Render aufgerufen.
 
   return (
     <AppContext.Provider value={{ markdown, setMarkdown }}>
