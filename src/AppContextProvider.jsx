@@ -23,9 +23,7 @@ export const AppContextProvider = ({ children }) => {
     "- Item C",
   ].join("\n");
 
-  const [markdown, setMarkdown] = useState(
-    () => localStorage.getItem("markdown") || defaultMarkdown
-  ); //Verwende eine Lazy Initialization mit einer Funktion,dadurch wird localStorage.getItem("markdown") nur beim ersten Render aufgerufen.
+  const [markdown, setMarkdown] = useState(defaultMarkdown);
 
   return (
     <AppContext.Provider value={{ markdown, setMarkdown }}>

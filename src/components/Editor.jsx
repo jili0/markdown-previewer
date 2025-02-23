@@ -5,7 +5,6 @@ const Editor = () => {
   const { markdown, setMarkdown } = useContext(AppContext);
   const handleChange = (e) => {
     setMarkdown(e.target.value);
-    localStorage.setItem("markdown", e.target.value);
   };
   return (
     <div className="editor">

@@ -23,7 +23,6 @@ const Previewer = () => {
     if (previewRef.current) {
       previewRef.current.innerHTML = preview;
 
-      // Hier fügen wir `highlightBlock` hinzu, um die Syntax für Code zu setzen
       const codeBlocks = previewRef.current.querySelectorAll("pre code");
       codeBlocks.forEach((block) => {
         hljs.highlightBlock(block);
