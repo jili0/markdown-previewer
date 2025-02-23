@@ -32,7 +32,7 @@ const Previewer = () => {
 
   return (
     <div className="previewer">
-      <p className="header">Previewer</p>
+      <p className="header">📜 Previewer</p>
       <div id="preview" ref={previewRef} className="preview"></div>
     </div>
   );

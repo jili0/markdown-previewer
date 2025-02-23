@@ -9,7 +9,7 @@ const Editor = () => {
   return (
     <div className="editor">
       <label htmlFor="editor" className="header">
-        Editor
+      ✍️ Editor
       </label>
       <textarea
         id="editor"
