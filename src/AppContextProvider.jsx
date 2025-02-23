@@ -12,15 +12,15 @@ export const AppContextProvider = ({ children }) => {
     "const greeting = 'Hello, World!';",
     "console.log(greeting);",
     "```",
-    "This is a list:",
-    "- Item A",
-    "- Item B",
-    "- Item C",
     "This is a blockquote:",
     "> To be, or not to be, that is the question.",
     "This is an image:",
     "![React Logo w/ Text](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)",
-    "This is **bold** text.",
+    "This is **bold** text",
+    "This is a list:",
+    "- Item A",
+    "- Item B",
+    "- Item C",
   ].join("\n");
   const [markdown, setMarkdown] = useState(
     localStorage.getItem("markdown") || defaultMarkdown
