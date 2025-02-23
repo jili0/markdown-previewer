@@ -12,7 +12,7 @@ export const AppContextProvider = ({ children }) => {
 
     "### Code Snippet",
     "You can also display code in a neat block:",
-    "```javascript",
+    "```",
     "const greeting = 'Hello, World!';",
     "console.log(greeting);",
     "```",
