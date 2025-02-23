@@ -58,7 +58,7 @@ export const AppContextProvider = ({ children }) => {
 
     "### Horizontal Line",
     "Use a horizontal line to separate sections:",
-    "---",
+    "***",
 
     "### Emoji Support",
     "You can even add some fun with emojis! :smile: :rocket: :fire:",
