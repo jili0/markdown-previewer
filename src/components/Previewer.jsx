@@ -8,18 +8,28 @@ import "highlight.js/styles/github.css";
 const Previewer = () => {
   marked.setOptions({
     breaks: true,
-    gfm: true, //Das gfm-Flag in marked.js aktiviert die GitHub Flavored Markdown (GFM)-Erweiterungen, die das Verhalten von Markdown in GitHub-Readme-Dateien nachahmen.
+    gfm: true,
     highlight: function (code) {
       return hljs.highlightAuto(code).value;
     },
   });
+
   const { markdown } = useContext(AppContext);
+  const previewRef = useRef();
+
   useEffect(() => {
     const preview = DOMPurify.sanitize(marked(markdown));
-    if (previewRef.current) previewRef.current.innerHTML = preview;
-  }, [markdown]);
 
-  const previewRef = useRef();
+    if (previewRef.current) {
+      previewRef.current.innerHTML = preview;
+
+      // Hier fügen wir `highlightBlock` hinzu, um die Syntax für Code zu setzen
+      const codeBlocks = previewRef.current.querySelectorAll("pre code");
+      codeBlocks.forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    }
+  }, [markdown]);
 
   return (
     <div className="previewer">
