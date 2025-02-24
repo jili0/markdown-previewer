@@ -1,8 +1,9 @@
 # Markdown Previewer
 ## Frontend-Projekt mit React & SASS 
 
-## Das Schwierigste an diesem Projekt ...
-Das Schwierigste an diesem Projekt ist herauszufinden, wie man mehrere Zeilenumbrüche in einem Textarea korrekt als Zeilenumbruch im Previewer rendert. Ich bin sehr froh, als es am Ende geklappt hat! 🥳
+## Das Schwierigste an diesem Projekt war...
+Das Schwierigste an diesem Projekt war es, herauszufinden, wie man mehrere Zeilenumbrüche in einem Textarea korrekt als Zeilenumbrüche im Previewer darstellt. Ich bin sehr froh, dass es am Ende geklappt hat! 🥳
+
 (My markdown previewer interprets carriage returns and renders them as br (line break) elements.)
 
 ## Technologien

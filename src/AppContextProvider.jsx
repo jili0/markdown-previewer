@@ -5,6 +5,7 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const defaultMarkdown = [
     "# Welcome to my React Markdown Previewer!",
+    "\n",
     "## Here’s a sneak peek of some cool features you can use!",
 
     "### Links",
