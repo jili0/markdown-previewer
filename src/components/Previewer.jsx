@@ -14,7 +14,7 @@ const Previewer = () => {
     },
   });
 
-  const { markdown } = useContext(AppContext);
+  const { markdown, setHeight } = useContext(AppContext);
   const [debouncedMarkdown, setDebouncedMarkdown] = useState(markdown);
   const previewRef = useRef();
 
@@ -36,6 +36,8 @@ const Previewer = () => {
       codeBlocks.forEach((block) => {
         hljs.highlightElement(block);
       });
+
+      setHeight(previewRef.current.scrollHeight);
     }
   }, [debouncedMarkdown]);
 

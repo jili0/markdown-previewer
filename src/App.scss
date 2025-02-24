@@ -1,4 +1,4 @@
-@import 'index'; 
+@import "index";
 
 * {
   margin: 0;
@@ -18,10 +18,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 1rem;
   width: 95vw;
-  margin: 2rem auto;
+  margin: 2rem auto 8rem;
 }
 
 pre {
@@ -63,7 +63,7 @@ blockquote {
 }
 
 textarea {
-  line-height: 1.5;
+  line-height: 2;
   width: 100%;
   resize: none;
   padding: 0.5rem;
@@ -72,7 +72,6 @@ textarea {
 
 .previewer {
   text-align: left;
-  min-height: 100vh;
   .preview {
     border: solid 1px black;
     border-radius: 5px;
