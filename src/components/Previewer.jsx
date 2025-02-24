@@ -29,7 +29,10 @@ const Previewer = () => {
         hljs.highlightElement(block);
       });
 
-      setHeight(previewRef.current.scrollHeight);
+      const newHeight = previewRef.current.scrollHeight;
+      if (newHeight !== height) {
+        setHeight(newHeight); 
+      }
     }
   }, [markdown, setHeight]);
 
