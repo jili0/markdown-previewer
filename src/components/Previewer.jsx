@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { AppContext } from "../AppContextProvider";
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
@@ -15,7 +15,16 @@ const Previewer = () => {
   });
 
   const { markdown } = useContext(AppContext);
+  const [debouncedMarkdown, setDebouncedMarkdown] = useState(markdown);
   const previewRef = useRef();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedMarkdown(markdown);
+    }, 800);
+
+    return () => clearTimeout(timeout);
+  }, [markdown]);
 
   useEffect(() => {
     const preview = DOMPurify.sanitize(marked(markdown));
@@ -25,10 +34,10 @@ const Previewer = () => {
 
       const codeBlocks = previewRef.current.querySelectorAll("pre code");
       codeBlocks.forEach((block) => {
-        hljs.highlightBlock(block);
+        hljs.highlightElement(block);
       });
     }
-  }, [markdown]);
+  }, [debouncedMarkdown]);
 
   return (
     <div className="previewer">
