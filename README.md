@@ -1,14 +1,30 @@
-User Story #1: I can see a textarea element with a corresponding id="editor".
+# Markdown Previewer
+## Frontend-Projekt mit React & SASS 
 
-User Story #2: I can see an element with a corresponding id="preview".
+## Das Schwierigste an diesem Projekt ...
+Das Schwierigste an diesem Projekt ist herauszufinden, wie man mehrere Zeilenumbrüche in einem Textarea korrekt als Zeilenumbruch im Previewer rendert. Ich bin sehr froh, als es am Ende geklappt hat! 🥳
+(My markdown previewer interprets carriage returns and renders them as br (line break) elements.)
 
-User Story #3: When I enter text into the #editor element, the #preview element is updated as I type to display the content of the textarea.
+## Technologien
 
-User Story #4: When I enter GitHub flavored markdown into the #editor element, the text is rendered as HTML in the #preview element as I type (HINT: You don't need to parse Markdown yourself - you can import the Marked library for this: https://cdnjs.com/libraries/marked).
+- React
+- Sass
+- Marked
+- highlight.js
+- DOMPurify
+  
+## Preview
 
-User Story #5: When my markdown previewer first loads, the default text in the #editor field should contain valid markdown that represents at least one of each of the following elements: a heading element (H1 size), a sub heading element (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
+<img src="app-preview/preview1.png" alt="Markdown Previewer Preview" />
+<br />
 
-User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should be rendered as HTML in the #preview element.
+<img src="app-preview/preview2.png" alt="Markdown Previewer Preview" />
+<br />
 
-Optional Bonus (you do not need to make this test pass): My markdown previewer interprets carriage returns and renders them as br (line break) elements.
+<img src="app-preview/preview3.png" alt="Markdown Previewer Preview" />
+<br />
+
+
+
+
 
