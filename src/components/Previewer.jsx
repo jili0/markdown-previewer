@@ -14,12 +14,14 @@ const Previewer = () => {
     },
   });
 
-  const { markdown, setHeight } = useContext(AppContext);
+  const { markdown, height, setHeight } = useContext(AppContext);
 
   const previewRef = useRef();
 
   useEffect(() => {
-    const preview = DOMPurify.sanitize(marked(markdown));
+    const preview = DOMPurify.sanitize(
+      marked(markdown.replace(/\n(?=\n)/g, "\n<br>\n"))
+    );
 
     if (previewRef.current) {
       previewRef.current.innerHTML = preview;
@@ -31,7 +33,7 @@ const Previewer = () => {
 
       const newHeight = previewRef.current.scrollHeight;
       if (newHeight !== height) {
-        setHeight(newHeight); 
+        setHeight(newHeight);
       }
     }
   }, [markdown, setHeight]);
