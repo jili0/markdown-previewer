@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../AppContextProvider";
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
@@ -15,16 +15,8 @@ const Previewer = () => {
   });
 
   const { markdown, setHeight } = useContext(AppContext);
-  const [debouncedMarkdown, setDebouncedMarkdown] = useState(markdown);
+
   const previewRef = useRef();
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setDebouncedMarkdown(markdown);
-    }, 800);
-
-    return () => clearTimeout(timeout);
-  }, [markdown]);
 
   useEffect(() => {
     const preview = DOMPurify.sanitize(marked(markdown));
@@ -39,7 +31,7 @@ const Previewer = () => {
 
       setHeight(previewRef.current.scrollHeight);
     }
-  }, [debouncedMarkdown]);
+  }, [markdown]);
 
   return (
     <div className="previewer">
