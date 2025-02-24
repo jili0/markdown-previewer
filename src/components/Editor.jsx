@@ -1,15 +1,15 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef, useLayoutEffect } from "react";
 import { AppContext } from "../AppContextProvider";
 
 const Editor = () => {
   const { markdown, setMarkdown, height } = useContext(AppContext);
   const textareaRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = `${height}px`;
     }
-  }, [height]);
+  }, [height]); //Verwende hier useLayoutEffect, um sicherzustellen, dass der DOM richtig gemessen wird, bevor der Textbereich seine Höhe erhält
 
   const handleChange = (e) => {
     setMarkdown(e.target.value);

@@ -69,7 +69,7 @@ export const AppContextProvider = ({ children }) => {
 
   const [markdown, setMarkdown] = useState(defaultMarkdown);
 
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState(1000);
 
   return (
     <AppContext.Provider value={{ markdown, setMarkdown, height, setHeight }}>

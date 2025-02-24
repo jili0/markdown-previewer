@@ -31,7 +31,7 @@ const Previewer = () => {
 
       setHeight(previewRef.current.scrollHeight);
     }
-  }, [markdown]);
+  }, [markdown, setHeight]);
 
   return (
     <div className="previewer">
