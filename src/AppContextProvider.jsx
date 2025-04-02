@@ -5,11 +5,11 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const defaultMarkdown = [
     "# Welcome to my React Markdown Previewer!",
-    "\n",
-    "## Here’s a sneak peek of some cool features you can use!",
+    "",
+    "## Here's a sneak peek of some cool features you can use!",
 
     "### Links",
-    "You can easily link to other websites. Here’s a link to my [other projects](https://jingli.work).",
+    "You can easily link to other websites. Here's a link to my [other projects](https://jingli.work).",
 
     "### Code Snippet",
     "You can also display code in a neat block:",
@@ -69,11 +69,20 @@ export const AppContextProvider = ({ children }) => {
   ].join("\n");
 
   const [markdown, setMarkdown] = useState(defaultMarkdown);
-
-  const [height, setHeight] = useState(1000);
+  
+  // Gemeinsame Höhe für Editor und Previewer
+  const [editorHeight, setEditorHeight] = useState(1200);
+  const [previewerHeight, setPreviewerHeight] = useState(1200);
 
   return (
-    <AppContext.Provider value={{ markdown, setMarkdown, height, setHeight }}>
+    <AppContext.Provider value={{ 
+      markdown, 
+      setMarkdown, 
+      editorHeight, 
+      setEditorHeight,
+      previewerHeight,
+      setPreviewerHeight 
+    }}>
       {children}
     </AppContext.Provider>
   );

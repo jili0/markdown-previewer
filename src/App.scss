@@ -1,4 +1,9 @@
-@import "index";
+@forward "index";
+
+:root {
+  color: #213547;
+  background-color: #ffffff;
+}
 
 * {
   margin: 0;
@@ -10,6 +15,7 @@ body {
   display: grid;
   place-items: center;
   background-color: #0055cc49;
+  color: #213547;
 }
 
 .app {
@@ -44,6 +50,11 @@ blockquote {
   padding: 1rem;
   width: 50%;
   min-height: 90vh;
+  background-color: white;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+
   .header {
     display: block;
     font-size: 1.5rem;
@@ -68,19 +79,30 @@ textarea {
   resize: none;
   padding: 0.5rem;
   overflow: hidden;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  flex-grow: 1;
 }
 
 .previewer {
   text-align: left;
+
   .preview {
     border: solid 1px black;
     border-radius: 5px;
     padding: 0.5rem;
+    color: #333;
+    background-color: white;
+    flex-grow: 1;
+    overflow: hidden;
+    padding-bottom: 80px;
     li {
       list-style-position: inside;
       margin: 0.5rem;
     }
   }
+
   img {
     margin: 0.5rem;
     max-width: 150px;
